@@ -5,12 +5,11 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(207, 207, 207,0.9);
+    background-color: rgb(255, 255, 255);
     z-index: 10;
 }
 
 .spinner-visibility {
-
     animation-name: anim-hidden;
     animation-duration: 2.5s;
     animation-iteration-count: 1;
