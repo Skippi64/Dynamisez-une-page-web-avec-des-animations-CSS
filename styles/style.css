@@ -6,19 +6,16 @@
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    color: #000000;
 }
 
 h1 {
     font-family: 'Shrikhand', sans-serif;
-    margin: 10px;
-    font-weight: 500;
+    margin: 20px;
 }
 
 h4 {
     font-family: 'Shrikhand', sans-serif;
 }
-
 
 h2, h3 {
     font-weight: 800;
@@ -41,7 +38,12 @@ body {
     margin: 0 auto;
     width: 100%;
     min-width: 320px;
-    max-width: 576px;
+    max-width: 768px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
 }
 
 /* =========== HEADER =========== */
@@ -55,28 +57,29 @@ header {
 header .bar-locality {
     width: 100%;
     background-color: #eaeaea;
-    padding: 10px;
-    font-weight: bold;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 700;
     color: #313131;
-
-    /* BOX-SHADOW */
-    box-shadow: 0px -3px 8px 0px rgba(38,38,38,0.50);
-    -webkit-box-shadow: 0px -3px 8px 0px rgba(38,38,38,0.50);
-    -moz-box-shadow: 0px -3px 8px 0px rgba(38,38,38,0.50);
+    box-shadow: 0px -3px 4px 0px rgba(38,38,38,0.20);
 }
 
 header .main-header {
     width: 100%;
     background-color: #f6f6f6;
-    padding: 20px;
-
+    padding: 25px 20px;
     box-sizing: border-box;
 }
 
 header .main-header h2 {
     font-weight: bold;
-    padding: 0 40px;
+    padding: 0 20px;
     margin: 20px auto;
+}
+
+header .main-header p {
+    font-size: 16px;
+    color: #737272;
 }
 
 header .fa-location-dot {
@@ -93,13 +96,12 @@ header .fa-location-dot {
     font-size: 14px;
     margin: 20px;
     cursor: pointer;
+    box-shadow: 2px 2px 6px 2px rgba(54, 54, 54, 0.5);
 }
 
     .btn-all-restaurants:hover {
-        background: linear-gradient(#9356DC, #FF79DA);
+        background: linear-gradient(rgba(255, 121, 218, 0.9), rgba(147, 86, 220,0.8));
     }
-
-
 
 /* =========== MAIN =========== */
 main {
@@ -111,13 +113,14 @@ main {
 }
 
 main h3 {
-    padding-left: 15px;
-    margin: 40px auto 20px auto;
+    font-size: 23px;
+    margin: 30px auto 20px auto;
 }
 
 /* STEPS-SECTION*/
 .section-steps {
     width: 100%;
+    padding: 0px 15px;
 }
 
 .section-steps nav {
@@ -127,18 +130,20 @@ main h3 {
 
 .section-steps nav ol {
     padding: 0;
+    counter-reset: compteurStep;
 }
 .section-steps nav ol li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     list-style: none;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
 .list-steps:before {
-    /* A MODIFIER*/
-    counter-increment: compteListe 1;
-    content: counter(compteListe) " ";
-    /* ------  */
+    counter-increment: compteurStep;
+    content: counter(compteurStep) " ";
     background: #9356dc;
     height: 25px;
     width: 25px;
@@ -148,41 +153,48 @@ main h3 {
     align-items: center;
     color: #fff;
     position: absolute;
-    margin-top: 18px;
     margin-left: -10px;
 }
 
 .section-steps a {
     display: block;
-    background-color: #eaeaea;
-    padding: 20px;
+    background-color: #f6f6f6;
+    padding: 10px;
     margin: 10px auto;
     border-radius: 20px;
     width: 100%;
-    text-align: left;
-    text-decoration: none;
-    color: #000000;
-    font-family: 'Roboto', sans-serif;
     font-weight: 700;
-
-    /* BOX-SHADOW */
-    box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0px 0px 3px -1px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 0px 3px -1px rgba(0,0,0,0.5);
+    box-shadow: 1px 2px 20px 0px rgba(255, 255, 255, 0.5);
 }
 
 .section-steps .icon-step {
     color: #626262;
     font-size: 18px;
-    margin-left: 8%;
-    margin-right: 8%;
+    flex: 1;
 }
 
-.list-steps a:hover {
+.section-steps p {
+    flex: 2;
+    text-align: left;
+}
+
+.section-steps .list-steps a:hover {
+    color: #000000;
+    box-shadow: 1px 2px 20px 0px rgba(191, 191, 191, 0.3);
     background-color: #f5edff;
-    color: #FF79DA;
 }
 
+    .section-steps .list-steps a:hover .icon-step {
+        background-color: #9356dc;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+.span-steps-link {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 /* SECTION-RESTAURANTS*/
 .section-restaurants {
@@ -190,13 +202,15 @@ main h3 {
     margin: 40px auto;
     margin-bottom: 0;
     width: 100%;
+    padding: 15px;
     padding-bottom: 50px;
+
 }
 
 .section-restaurants-thumbnails {
     display: grid;
     grid-template-columns: repeat(1,1fr);
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .thumbnails {
@@ -204,18 +218,9 @@ main h3 {
     border-radius: 15px;
     position: relative;
     text-decoration: none;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    transition-duration: 0.8s;
-    /* BOX-SHADOW */
-    box-shadow: 0px 0px 33px -9px rgba(0,0,0,1);
-    -webkit-box-shadow: 0px 0px 25px -5px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 0px 25px -5px rgba(0,0,0,1);
-}
-
-.thumbnails:hover {
-    transform: scale(1.02);
-    transition-duration: 0.8s;
+    box-shadow: 0px 0px 33px -9px rgb(170,170,170);
 }
 
 .img-thumbnails {
@@ -226,7 +231,6 @@ main h3 {
 }
 
 /* TAG NEW */
-
 .thumbnails-tag-new {
     color: #008563;
     background-color: #99E2D0;
@@ -254,19 +258,20 @@ main h3 {
 .thumnails-description-contenu h3 {
     margin: 0 0 5px 0;
     padding: 0;
+    font-size: 18px;
 }
 
 .thumnails-description-contenu p {
     margin: 0;
     padding: 0;
-    font-size: 18px;
+    font-size: 16px;
     color: #313131;
 }
 
 /* THUMBNAILS HEART */
 .div-thumbnails-heart {
-        height: 40px;
-        width: 40px;
+        height: 39px;
+        width: 39px;
         padding: 0;
         display: flex;
         align-items: center;
@@ -280,7 +285,7 @@ main h3 {
     justify-content: center;
     align-items: center;
     position: absolute;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .div-thumbnails-heart .fa-regular {
@@ -301,7 +306,7 @@ main h3 {
 }
 
 .div-thumbnails-heart .fa-solid:hover {
-    transition-duration: 0.6s;
+    transition-duration: 0.5s;
     opacity: 1;
 }
 
@@ -314,7 +319,10 @@ footer {
     width: 100%;
     background-color: #353535;
     color: #fff;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
     box-sizing: border-box;
 }
 
@@ -323,6 +331,7 @@ footer h4 {
     font-weight: 200;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: #fff;
 }
 
 footer nav a {
@@ -339,14 +348,8 @@ footer nav a:hover {
 }
 
 footer nav a i {
-    display: inline-block;
+    display: block;
     width: 15px;
     height: 15px;
     margin-right: 15px;
-}
-
-/* MAX-W*/
-@media all and (min-width: 576px) and (max-width: 992px) 
-{ 
-
 }

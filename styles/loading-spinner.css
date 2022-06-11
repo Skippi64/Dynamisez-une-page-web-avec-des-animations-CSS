@@ -1,0 +1,111 @@
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+}
+
+.spinner-visibility {
+    animation-name: anim-hidden;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+    animation-timing-function:step-end;
+    visibility: hidden;
+}
+
+@keyframes anim-hidden {
+    0% {
+        visibility: visible;
+    }
+    100% {
+        visibility: hidden;
+    }
+}
+
+svg {
+    width: 200px;
+    fill: #9356DC;
+}
+
+/* FUME 1 */
+#fume {
+    animation-name: fume;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in;
+}
+
+@keyframes fume {
+    0% {
+        opacity: 0;
+        fill: #9356DC;
+    }
+    30% {
+        opacity: 1;
+        fill: #FF79DA;
+    }
+    100% {
+        opacity: 0;
+        fill: #9356DC;
+    }
+}
+
+/* FUME 3 */
+#fume-trois {
+    animation-name: fume-trois;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in;
+}
+
+@keyframes fume-trois {
+    0% {
+        opacity: 0;
+        fill: #FF79DA;
+    }
+    70% {
+        opacity: 1;
+        fill: #9356DC;
+    }
+    100% {
+        opacity: 0;
+        fill: #FF79DA;
+    }
+
+}
+
+/* FUME 2 */
+#fume-deux {
+    animation-name: fume-deux;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in;
+}
+
+@keyframes fume-deux {
+    0% {
+        opacity: 0;
+        fill: #FF79DA;
+    }
+    50% {
+        opacity: 1;
+        fill: #99E2D0;
+    }
+    100% {
+        opacity: 0;
+        fill: #9356DC;
+    }
+
+    20% {
+        opacity: 0;
+        fill: #99E2D0;
+    }
+}
+
+#tasse {
+    fill: #9356DC;
+}
