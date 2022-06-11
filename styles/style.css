@@ -38,7 +38,6 @@ body {
     margin: 0 auto;
     width: 100%;
     min-width: 320px;
-    max-width: 768px;
 }
 
 a {
@@ -194,6 +193,10 @@ main h3 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.span-steps-link p {
+ font-size: 15px;
 }
 
 /* SECTION-RESTAURANTS*/
@@ -352,4 +355,48 @@ footer nav a i {
     width: 15px;
     height: 15px;
     margin-right: 15px;
+}
+
+
+
+/* SCREEN > 975px */
+@media all  and (min-width: 900px) and (max-width: 20000px) {
+    .section-steps {
+        width: 95%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .section-steps p {
+        flex: 3;
+        text-align: center;
+    }
+    ol {
+        display:flex;
+        gap: 20px;
+    }
+
+    .section-restaurants-thumbnails {
+        grid-template-columns: repeat(2,1fr);
+        gap: 40px;
+        width: 95%;
+        margin: 0 auto;
+        padding: 0px;
+    }
+
+    .section-restaurants {
+        padding: 0px 0px 50px 0px;
+    }
+
+    main h3 {
+        width: 95%;
+    }
+
+    .img-thumbnails {
+        height: 15rem;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
