@@ -69,6 +69,7 @@ header {
                 padding: 0;
                 font-family: 'Shrikhand', sans-serif;
                 font-size: 22px;
+                font-weight: 500;
             }
 
     /* HEART ICON TITLE */
@@ -114,7 +115,7 @@ header {
 /* SECTION LIST-PRODUCT */
 .list-product {
     background-color: #f6f6f6;
-    border-radius: 50px;
+    border-radius: 50px 50px 0 0;
     width: 100%;
     padding: 0 10px 50px 10px;
     margin: -50px auto 0 auto;
@@ -154,6 +155,8 @@ header {
     animation-fill-mode: both;
     transform: scale(0);
     max-width: 100%;
+    transition: 0.5s;
+    animation-duration: 0.5s;
 }
 
 .animation-1 {
@@ -182,6 +185,7 @@ header {
     text-overflow: ellipsis;
     overflow: hidden;
     flex: 1;
+    padding: 5px;
 }
 
 /* PRICE */
@@ -195,14 +199,104 @@ header {
 
 /* EFFET PRODUIT ICON */
 .effect-detail-product {
+    position: absolute;
     background-color: #99e2d0;
-    margin: -1rem -5rem -1rem 1rem;
-    width: 4rem;
+    width: 70px;
+    height: 100px;
+    margin-top : -12px;
+    margin-left: 99%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition-duration: .5s;
+    animation-duration: 0.6s;
+    animation: slide-default 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    visibility: hidden;
+    transition-duration: 0.6s;
 }
+
+@-webkit-keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-72px);
+              transform: translateX(-72px);
+    }
+  }
+  @keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-72px);
+              transform: translateX(-72px);
+    }
+  }
+
+  /* TEST RETOUR */
+  @-webkit-keyframes slide-default {
+    0% {
+      -webkit-transform: translateX(-72px);
+              transform: translateX(-72px);
+    }
+    100% {
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+  }
+  @keyframes slide-default {
+    0% {
+      -webkit-transform: translateX(-72px);
+              transform: translateX(-72px);
+              opacity: 0%;
+    }
+    100% {
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+              opacity: 100%;
+    }
+  }
+
+  .detail-product:hover {
+    transition-property: padding-right;
+    padding-right: 80px;
+}
+
+.detail-product:hover .effect-detail-product {
+    visibility: visible;
+	-webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* ANIMATION ROTATION ICON */
+@-webkit-keyframes icon-rota {
+    from {
+      -webkit-transform: rotate(-360deg);
+              transform: rotate(-360deg);
+    }
+    to {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+  }
+
+  @keyframes icon-rota {
+    from{
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+  }
+
+.detail-product:hover .div-effect-icon {
+	animation: icon-rota;
+    animation-duration: 0.5s;
+}
+
 
 .div-effect-icon {
     height: 1.6rem;
@@ -212,8 +306,7 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 100px;
-    transform: rotate(180deg);
-    transition-duration: .5s;
+    animation-duration: 0.5s;
 }
 
 .fa-check {
@@ -225,6 +318,7 @@ footer {
     display: flex;
     flex-direction: column;
     text-align: left;
+    margin: initial;
     width: 100%;
     background-color: #353535;
     color: #fff;
@@ -236,11 +330,16 @@ footer {
 }
 
 footer h4 {
+    margin: initial;
     font-size: 20px;
     font-weight: 200;
     margin-top: 10px;
     margin-bottom: 10px;
     color: #fff;
+    font-family: Roboto, sans-serif;
+}
+footer nav {
+    margin: initial;
 }
 
 footer nav a {
@@ -266,3 +365,25 @@ footer nav a i {
 
 
 
+/* BOUTON */
+.btnCommander {
+    text-align: center;
+}
+
+.btn-all-restaurants {
+    color: #fff;
+    background: linear-gradient(#FF79DA, #9356DC);
+    border: none;
+    padding: 20px 20px;
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin: 20px;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px 2px rgba(54, 54, 54, 0.5);
+    width: 50%;
+}
+
+    .btn-all-restaurants:hover {
+        background: linear-gradient(rgba(255, 121, 218, 0.9), rgba(147, 86, 220,0.8));
+    }
